@@ -16,9 +16,9 @@ function App() {
     Adapter.getShows().then((shows) => setShows(shows));
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // });
 
   function handleSearch(e) {
     setSearchTerm(e.target.value.toLowerCase());
@@ -40,7 +40,7 @@ function App() {
   let displayShows = shows;
   if (filterByRating) {
     displayShows = displayShows.filter((s) => {
-      s.rating.average >= filterByRating;
+      return s.rating.average >= filterByRating;
     });
   }
 
